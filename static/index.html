@@ -228,6 +228,7 @@
     {% endif %}
 
     <!-- 音乐播放器 Start -->
+    {% if mplayer %}
     <div id="player-container">
 
         <div id="player">
@@ -262,6 +263,7 @@
         </div>
         <button id="toggle-btn"><i class="fas fa-chevron-right"></i></button>
     </div>
+    {% endif %}
     <!-- 音乐播放器 End -->
 
     <!-- 动态加载的脚本 -->
