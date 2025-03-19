@@ -128,7 +128,7 @@
                     <p id="device-status"><i>Steam</i> Status</p>
                 </b></h3>
             <div class="steam" id="steam">
-                <iframe src="/steam" style="border: dashed skyblue;" name="steam_iframe" scrolling="no" frameborder="1"
+                <iframe src="/steam" style="border:none;" name="steam_iframe" scrolling="no" frameborder="0"
                     marginheight="0px" marginwidth="0px" height="210px" width="310px" allowfullscreen></iframe>
             </div>
             {% endif %}
@@ -145,7 +145,7 @@
                 <script defer>
                     const hitokotoElement = document.querySelector('#hitokoto_text');
                     try {
-                        fetch('https://v1.hitokoto.cn')
+                        fetch('https://v1.hitokoto.cn/?c=k')
                             .then(response => response.json())
                             .then(data => {
                                 console.log(`[Hitokoto] enabled and got response`);
@@ -162,7 +162,7 @@
             </div>
             {% endif %}
             {{ more_text | safe }}
-            <p>你可以通过这个页面视奸 <b>{{ user }}</b>。<br>
+            <p>你可以在这<del>视奸</del> <b>{{ user }}</b><br>
                 <a href="{{ repo }}" target="_blank" style="color: rgb(0, 255, 0);">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:1em;">
                         <path
