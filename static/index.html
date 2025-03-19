@@ -145,7 +145,7 @@
                 <script defer>
                     const hitokotoElement = document.querySelector('#hitokoto_text');
                     try {
-                        fetch('https://v1.hitokoto.cn/?c=k')
+                        fetch('https://v1.hitokoto.cn/?c=k&c=i&c=d')
                             .then(response => response.json())
                             .then(data => {
                                 console.log(`[Hitokoto] enabled and got response`);

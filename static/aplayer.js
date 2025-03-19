@@ -1,3 +1,4 @@
+//拖动切换效果
 const toggleBtn = document.getElementById('toggle-btn');
 
 const initialLeft = 10;
