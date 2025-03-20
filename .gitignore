@@ -7,4 +7,5 @@ data.json
 client/Win_Simple/build/
 client/Win_Simple/*.spec
 .env
+API简要说明及示例.md
 client/Win_Simple/dist/config.ini
