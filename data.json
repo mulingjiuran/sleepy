@@ -8,36 +8,36 @@
         "month_is": "2025-3",
         "year_is": "2025",
         "today": {
-            "/": 1,
-            "/static/moonlight.js": 1,
-            "/static/get.js": 1,
-            "/static/canvas.js": 1,
-            "/events": 1,
-            "/static/favicon.ico": 1
+            "/": 2,
+            "/static/moonlight.js": 2,
+            "/static/get.js": 2,
+            "/static/canvas.js": 2,
+            "/events": 3,
+            "/static/favicon.ico": 2
         },
         "month": {
-            "/": 98,
-            "/static/moonlight.js": 98,
-            "/static/get.js": 98,
-            "/static/canvas.js": 98,
-            "/events": 122,
-            "/static/favicon.ico": 96
+            "/": 99,
+            "/static/moonlight.js": 99,
+            "/static/get.js": 99,
+            "/static/canvas.js": 99,
+            "/events": 124,
+            "/static/favicon.ico": 97
         },
         "year": {
-            "/": 98,
-            "/static/moonlight.js": 98,
-            "/static/get.js": 98,
-            "/static/canvas.js": 98,
-            "/events": 122,
-            "/static/favicon.ico": 96
+            "/": 99,
+            "/static/moonlight.js": 99,
+            "/static/get.js": 99,
+            "/static/canvas.js": 99,
+            "/events": 124,
+            "/static/favicon.ico": 97
         },
         "total": {
-            "/": 98,
-            "/static/moonlight.js": 98,
-            "/static/get.js": 98,
-            "/static/canvas.js": 98,
-            "/events": 122,
-            "/static/favicon.ico": 96
+            "/": 99,
+            "/static/moonlight.js": 99,
+            "/static/get.js": 99,
+            "/static/canvas.js": 99,
+            "/events": 124,
+            "/static/favicon.ico": 97
         }
     }
 }
