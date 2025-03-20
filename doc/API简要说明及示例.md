@@ -1,4 +1,76 @@
-### API 简要说明及示例
+# API 简要说明及示例
+
+|         | 路径                                                         | 方法   | 作用                                                         |
+| ------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------ |
+|         | 密钥`cWob7BAY2xkgYFkJDsqmyFyJMgaNcUGADfmbnyRKi8k`            |        |                                                              |
+| read    | `/`                                                          | `GET`  | 显示主页                                                     |
+| read    | `/query`                                                     | `GET`  | 获取状态                                                     |
+| read    | `/status_list`                                               | `GET`  | 获取可用状态列表                                             |
+| read    | `/metrics`                                                   | `GET`  | 获取统计信息                                                 |
+| status  | `/set?secret=<secret>&status=<状态索引数字>`                 | `GET`  | 设置状态                                                     |
+| status  | `/device/set`<br />{<br/>    "secret": "cWob7BAY2xkgYFkJDsqmyFyJMgaNcUGADfmbnyRKi8k",<br/>    "id": "device-1", // 设备标识符<br/>    "show_name": "MyDevice1", // 显示名称<br/>    "using": true, // 是否正在使用<br/>    "app_name": "VSCode" // 正在使用应用的名称<br/>} | `POST` | 设置单个设备的状态 (打开应用)                                |
+| status  | `/device/remove?secret=<secret>&name=<device_name>`          | `GET`  | 移除单个设备的状态                                           |
+| status  | `/device/clear?secret=<secret>`                              | `GET`  | 清除所有设备的状态                                           |
+| private | `/device/private_mode?secret=<secret>&private=<bool>`        | `GET`  | 设置隐私模式<br />在 [/query]的返回中设置 `device` 项为空 `{}` |
+| Storage | `/save_data?secret=<secret>`                                 | `GET`  | 保存内存中的状态信息到`data.json`                            |
+
+
+
+## 调用
+
+#### cmd调用
+
+> GET命令：`curl https://moranadd-sleepy.hf.space/<路径>`
+
+> POST命令：`curl -X POST https://moranadd-sleepy.hf.space/device/set -H "Content-Type: application/json" -d '{"secret": "密钥", "id": "设备唯一标识", "show_name": "我的手机", "using": true, "app_name": "微信"}'`
+
+#### python调用
+
+```python
+#调用GET
+import requests
+
+# 显示主页
+response = requests.get('https://moranadd-sleepy.hf.space/')
+print(response.text)
+
+# 获取当前状态
+response = requests.get('https://moranadd-sleepy.hf.space/query')
+print(response.json())
+
+# 获取所有预定义状态列表
+response = requests.get('https://moranadd-sleepy.hf.space/status_list')
+print(response.json())
+
+# 获取服务统计信息
+response = requests.get('https://moranadd-sleepy.hf.space/metrics')
+print(response.json())
+
+# 设置当前状态码
+response = requests.get('https://moranadd-sleepy.hf.space/set?secret=MySecret&status=1')
+print(response.json())
+```
+
+```python
+# 设置单个设备状态
+response = requests.post('https://moranadd-sleepy.hf.space/device/set', json={
+    "secret": "MySecret",
+    "id": "phone-1",
+    "show_name": "我的手机",
+    "using": true,
+    "app_name": "微信"
+})
+print(response.json())
+```
+
+> 附：
+>
+> GET 和 POST 是 HTTP 请求的两种基本方法，用于客户端和服务器之间的通信。
+>
+> - **GET** 方法通常用于请求服务器发送数据给客户端。它通常用于信息检索，并且可以在 URL 中直接看到请求的数据。
+> - **POST** 方法用于向服务器提交数据。它通常用于更新或创建资源，请求体（body）中包含了要提交的数据，不会显示在 URL 中。
+
+## 简要解释
 
 #### 1. 只读接口
 
