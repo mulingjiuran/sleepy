@@ -25,11 +25,11 @@
 ---
 
 ## 演示站点
-| 环境        | 地址                                                       | 状态监控                                                     |
-| ----------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| 稳定版      | [sleepy.wyf9.top](https://sleepy.wyf9.top)                 | ![](E:/Notes/TyporaNotes/pictrue/status.svg+xml)             |
-| 开发版      | [sleepy-preview.wyf9.top](https://sleepy-preview.wyf9.top) | [![Status](E:/Notes/TyporaNotes/pictrue/status-1742444568506-1.svg+xml)](https://uptime.wyf9.top) |
-| HuggingFace | [wyf9-sleepy.hf.space](https://wyf9-sleepy.hf.space)       | [![Status](E:/Notes/TyporaNotes/pictrue/status-1742444568506-2.svg+xml)](https://uptime.wyf9.top) |
+| 环境          | 地址                                                         |
+| ----------- | ---------------------------------------------------------- |
+| 稳定版         | [sleepy.wyf9.top](https://sleepy.wyf9.top)                 |
+| 开发版         | [sleepy-preview.wyf9.top](https://sleepy-preview.wyf9.top) |
+| HuggingFace | [wyf9-sleepy.hf.space](https://wyf9-sleepy.hf.space)       |
 
 ⚠️ 警告：禁止对演示站点进行JS注入等攻击行为
 
