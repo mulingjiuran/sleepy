@@ -1,0 +1,68 @@
+# Ran的配置文件
+
+# ==================== 页面内容配置 ====================
+[page]
+
+# 将显示在网页中的 [User]'s Status: 处的名字
+name = "Ran"
+
+# 页面标题 (<title>)
+title = "sleepy"
+
+# 页面图标 (favicon) url
+favicon = "/favicon.ico"
+
+# 背景图片 url/api
+background = "/background.png"
+
+# 更多信息链接的提示
+learn_more_text = "GitHub"
+
+# 更多信息链接的目标
+learn_more_link = "https://github.com/mulingjiuran/sleepy"
+
+# 内容将在状态页底部 learn_more 上方插入（不转义）
+more_text = ""
+
+# 设置页面的默认主题
+# 主题名即为 theme/ 下的文件夹名
+theme = "blue"
+
+
+# ==================== 状态配置 ====================
+
+# 控制是否优先显示正在使用设备
+# 顺序: 在线(正在使用 -> 未在使用) -> 离线 -> 未知
+using_first = true
+
+# 状态列表
+# 请确保至少有 0 和 1 两个状态
+[[status.status_list]]
+name = "活着"
+desc = "呼吸正常，心跳持续，但灵魂偶尔离线，有事请放信号弹"
+color = "awake"
+
+[[status.status_list]]
+name = "似了"
+desc = "睡似了或在听课，有事请敲棺材板"
+color = "sleeping"
+
+[[status.status_list]]
+name = "学兮"
+desc = "书在眼前舞，字在面前飘，学习如修仙，境界全靠熬，有事请发漂流瓶"
+color = "awake"
+
+[[status.status_list]]
+name = "摸鱼"
+desc = "键盘在动，脑子在飘，有事请放信鸽"
+color = "awake"
+
+# [[status.status_list]]
+# name = "读书"
+# desc = "眼睛在看书，脑子在神游，学习如云游，灵魂已出走"
+# color = "awake"
+
+# [[status.status_list]]
+# name = "敲代码"
+# desc = "键盘在敲打，思绪在发呆，鼠标在等待，效率全无来"
+# color = "sleeping"
