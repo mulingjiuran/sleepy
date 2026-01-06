@@ -19,13 +19,14 @@ class ParticleBackground {
     // 创建 canvas
     initCanvas() {
         this.canvas = document.createElement("canvas");
-        this.canvas.style.cssText = `position:fixed;top:0;left:0;z-index:${this.config.zIndex};opacity:${this.config.opacity};`;
+        this.canvas.style.cssText = `position:fixed;top:0;left:0;z-index:${this.config.zIndex};opacity:${this.config.opacity};pointer-events:none;`;
         document.body.appendChild(this.canvas);
         this.ctx = this.canvas.getContext("2d");
 
         this.resizeCanvas();
-        this.resizeObserver = new ResizeObserver(() => this.resizeCanvas());
-        this.resizeObserver.observe(document.body);
+
+        // 使用 window resize 代替 ResizeObserver，避免无限循环
+        window.addEventListener('resize', () => this.resizeCanvas());
     }
 
     // 调整 canvas 大小
@@ -132,7 +133,7 @@ class ParticleBackground {
     destroy() {
         window.removeEventListener("mousemove", this.mouseMoveHandler);
         window.removeEventListener("mouseout", this.mouseOutHandler);
-        this.resizeObserver.disconnect();
+        // 删除这行: this.resizeObserver.disconnect();
         this.canvas.remove();
     }
 }

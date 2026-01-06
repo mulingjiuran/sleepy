@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    <!-- <script src="{{ url_for('static', filename='canvas.js') }}" defer></script> -->
+    <script src="{{ url_for('static', filename='canvas.js') }}" defer></script>
     <div class="container">
         {% for card_name, card_value in cards.items() %}
         <div class="card" id="{{ card_name }}">
