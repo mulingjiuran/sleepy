@@ -944,19 +944,30 @@ def verify_secret():
 #         )
 
 
+# @app.route('/<path:path_name>')
+# def serve_public(path_name: str):
+#     '''
+#     服务 `/data/public` / `/public` 文件夹下文件
+#     '''
+#     l.debug(f'Serving static file: {path_name}')
+#     file = d.get_cached_file('data/public', path_name) or d.get_cached_file('public', path_name)
+#     if file:
+#         mime = guess_type(path_name)[0] or 'text/plain'
+#         return flask.send_file(file, mimetype=mime)
+#     else:
+#         return flask.abort(404)
 @app.route('/<path:path_name>')
 def serve_public(path_name: str):
-    '''
-    服务 `/data/public` / `/public` 文件夹下文件
-    '''
+    import os
     l.debug(f'Serving static file: {path_name}')
-    file = d.get_cached_file('data/public', path_name) or d.get_cached_file('public', path_name)
-    if file:
-        mime = guess_type(path_name)[0] or 'text/plain'
-        return flask.send_file(file, mimetype=mime)
-    else:
-        return flask.abort(404)
-
+    
+    for base_dir in ['data/public', 'public']:
+        filepath = os.path.join(base_dir, path_name)
+        if os.path.isfile(filepath):
+            mime = guess_type(path_name)[0] or 'text/plain'
+            return flask.send_file(filepath, mimetype=mime)
+    
+    return flask.abort(404)
 # endregion routes
 
 # ========== End ==========
