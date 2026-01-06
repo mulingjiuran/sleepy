@@ -10,17 +10,44 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <style>
         body {
-            background: url('{{ page_background }}') no-repeat center center fixed;
+            background-image: url('{{ page_background }}');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            /* background-color: #ffffff; */
+        }
+        /* ========== 明暗切换按钮样式 ========== */
+        #theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            z-index: 100;
+        }
+
+        #theme-toggle:hover {
+            background-color: rgba(128, 128, 128, 0.2);
+        }
+
+        #theme-toggle svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .card {
+            position: relative;
         }
     </style>
 
 </head>
 
 <body>
+    <script src="{{ url_for('static', filename='canvas.js') }}" defer></script>
     <div class="container">
         {% for card_name, card_value in cards.items() %}
         <div class="card" id="{{ card_name }}">

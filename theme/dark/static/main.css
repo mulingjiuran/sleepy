@@ -15,14 +15,14 @@ html {
 }
 
 body {
-  background-size: cover;
+  /* background-size: cover; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-attachment: fixed;
-  background-color: #121212;
+  /* background-attachment: fixed; */
+  /* background-color: #121212; */
   color: var(--text-color);
 }
 
@@ -272,4 +272,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 12px;
   background: var(--text-color);
   border-radius: 50%;
+}
+body {
+  background-color: #262624 !important;
 }
