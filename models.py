@@ -310,7 +310,7 @@ class ConfigModel(BaseModel):
 
     plugins_enabled: list[str] = [
         'v4_compatible', # 默认启用 v4 兼容
-        'theme_detect', # 默认启用主题检测
+      #  'theme_detect', # 默认启用主题检测
     ]
     '''
     `plugins_enabled`
